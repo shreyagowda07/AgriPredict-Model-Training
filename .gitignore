@@ -6,3 +6,6 @@ venv/
 .streamlit/secrets.toml
 .DS_Store
 Thumbs.db
+src/*.bak
+data/raw/
+data/processed/
