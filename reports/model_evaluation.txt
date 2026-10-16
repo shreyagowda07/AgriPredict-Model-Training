@@ -1,0 +1,25 @@
+AGRIPREDICT AI
+MODEL EVALUATION REPORT
+========================================
+Model: AgriPredict AI CNN
+TensorFlow version: 2.21.0
+Number of classes: 38
+Image size: 128 x 128
+Epochs completed: 5
+
+EVALUATION RESULTS
+----------------------------------------
+Best validation accuracy: 55.64%
+Test accuracy: 55.12%
+Test loss: 1.5233
+
+INTERPRETATION
+----------------------------------------
+The model completed training and was evaluated on the test dataset.
+The current test accuracy is a baseline and needs improvement.
+Further training, data augmentation, and model tuning may help.
+
+LIMITATION
+----------------------------------------
+This is an experimental model. Predictions should not be treated
+as confirmed plant disease diagnoses.
