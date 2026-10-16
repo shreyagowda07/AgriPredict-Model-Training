@@ -1,151 +1,97 @@
-\# AgriPredict AI — Plant Disease Detection Using CNN
+# AgriPredict AI — Plant Disease Detection Using MobileNetV2
 
+## 1. Project Overview
 
+AgriPredict AI is a machine learning project that uses deep learning and transfer learning to classify plant leaf images into 38 plant health and disease categories. It aims to demonstrate how AI can support early plant disease identification.
 
-\## 1. Project Overview
+## 2. Objectives
 
+- Build an image classification model using MobileNetV2.
+- Prepare and inspect the image dataset.
+- Train and evaluate the model.
+- Predict plant disease categories from leaf images.
+- Display predicted classes and confidence scores.
+- Provide a user-friendly interface for image-based prediction.
 
+## 3. Technologies Used
 
-AgriPredict AI is a machine learning project that uses a Convolutional Neural Network (CNN) to classify plant leaf images into 38 plant health and disease categories. The project aims to demonstrate how deep learning can support early plant disease identification.
+- Python
+- TensorFlow and Keras
+- MobileNetV2
+- NumPy
+- Pillow
+- JSON
+- Streamlit
+- PlantVillage dataset
 
+## 4. Model Details
 
+- Model architecture: MobileNetV2
+- Learning approach: Transfer learning
+- Input image size: 128 × 128 pixels
+- Image channels: RGB
+- Number of classes: 38
+- Training epochs: 5
 
-\## 2. Objectives
+## 5. Dataset
 
+The project uses labelled plant leaf images from the PlantVillage dataset. The dataset includes multiple plant species and disease categories, including apples, grapes, potatoes, corn, and tomatoes.
 
+## 6. Model Evaluation
 
-\- Build a CNN model for plant leaf classification.
+The project includes model evaluation scripts, a confusion matrix, and classification reports.
 
-\- Prepare and inspect the image dataset.
+The earlier CNN baseline recorded 55.12% test accuracy. The improved MobileNetV2 model has separate evaluation results; refer to the latest evaluation report before reporting its final accuracy.
 
-\- Train and evaluate the model.
+Note: Evaluation results depend on the dataset split and evaluation procedure. The model should be tested on an independent dataset before making claims about real-world performance.
 
-\- Predict plant categories from new leaf images.
+## 7. Project Structure
 
-\- Display the top three predicted classes and their model confidence scores.
+- `models/` — Trained models and class-name mappings.
+- `src/` — Training, prediction, validation, and application scripts.
+- `results/` — Evaluation reports, dataset summaries, and confusion matrix.
+- `reports/` — Project summary and model evaluation reports.
+- `README.md` — Project documentation.
 
+## 8. How to Run the Project
 
+### Install dependencies
 
-\## 3. Technologies Used
-
-
-
-\- Python
-
-\- TensorFlow and Keras
-
-\- NumPy
-
-\- Pillow
-
-\- JSON
-
-\- PlantVillage image dataset
-
-
-
-\## 4. Model Details
-
-
-
-\- Model: Convolutional Neural Network (CNN)
-
-\- Input image size: 128 × 128 pixels
-
-\- Image channels: RGB
-
-\- Number of classes: 38
-
-\- Training epochs: 5
-
-
-
-\## 5. Dataset
-
-
-
-The project uses the PlantVillage dataset, which contains labelled plant leaf images. The dataset is organised into training and testing sets. The model supports 38 classes covering plants such as apples, grapes, potatoes, corn, and tomatoes.
-
-
-
-\## 6. Model Evaluation
-
-
-
-\- Best validation accuracy: 55.64%
-
-\- Test accuracy: 55.12%
-
-\- Test loss: 1.5233
-
-
-
-These results represent an initial baseline. Further training, data augmentation, and model improvements are needed to improve classification performance.
-
-
-
-\## 7. How to Run the Project
-
-
-
-Open Command Prompt in the project directory and run:
-
-
+Create and activate a Python virtual environment if required, then install the dependencies used by the application.
 
 ```cmd
-
-python src\\predict\_disease.py "FULL\_PATH\_TO\_LEAF\_IMAGE.jpg"
-
+python -m venv venv
+venv\Scripts\activate
+pip install streamlit tensorflow numpy pillow
 ```
 
+### Launch the web application
 
+From the project root directory, run:
 
-Replace the example path with the actual path to a leaf image.
+```cmd
+streamlit run src/app.py
+```
 
+Open the local URL displayed in the terminal to use the application.
 
+## 9. Limitations
 
-The trained model and class labels are stored in the `models` folder.
+- Predictions may be incorrect for unfamiliar or real-world leaf images.
+- Dataset images may not represent every field condition.
+- Model confidence scores do not guarantee a correct diagnosis.
+- The application is an experimental project, not a replacement for expert agricultural advice.
 
+## 10. Future Enhancements
 
+- Evaluate the model on an independent test dataset.
+- Improve performance using data augmentation and model tuning.
+- Add more plant species and disease categories.
+- Improve the user interface and prediction explanations.
+- Deploy the application for wider testing.
 
-\## 8. Output
+## Conclusion
 
+AgriPredict AI demonstrates an AI-assisted plant disease classification workflow using MobileNetV2 and transfer learning. The project includes trained models, prediction scripts, evaluation results, and a Streamlit interface. It provides a foundation for further experimentation in agricultural AI.
 
-
-The prediction program displays the image filename and the top three predicted plant classes with their confidence scores.
-
-
-
-\## 9. Limitations
-
-
-
-The model is experimental and has not been validated for reliable field diagnosis. Predictions may be incorrect, particularly for images taken in real-world conditions.
-
-
-
-\## 10. Future Enhancements
-
-
-
-\- Improve model accuracy through data augmentation and model tuning.
-
-\- Evaluate per-class performance using a confusion matrix and classification report.
-
-\- Develop a user-friendly web interface for image uploads.
-
-\- Test the model using leaf images collected outside the training dataset.
-
-
-
-\## Conclusion
-
-
-
-AgriPredict AI demonstrates an end-to-end plant image classification workflow, from dataset inspection and CNN training to evaluation and prediction. It provides a foundation for further development of AI-assisted plant disease detection.
-
-### Detailed Sample Evaluation
-
-A separate evaluation script processed a capped sample of 1,837 test images and reported 39.19% sample accuracy. This is a separate evaluation result and should not be confused with the 55.12% test accuracy reported during model training.
-
-The project also generates a confusion matrix and a per-class classification report. The model is an experimental baseline and requires further improvement.
+**Disclaimer:** This model is for educational and experimental purposes. Always confirm important crop disease decisions with a qualified agricultural expert.
